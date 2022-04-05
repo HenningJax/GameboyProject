@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Hub.iml" filepath="$PROJECT_DIR$/Hub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GameboyProjext.iml" filepath="$PROJECT_DIR$/GameboyProjext.iml" />
     </modules>
   </component>
 </project>
