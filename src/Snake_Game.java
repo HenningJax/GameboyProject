@@ -164,7 +164,7 @@ public class Snake_Game extends JPanel implements ActionListener {
                             }
                             break;
                         case KeyEvent.VK_RIGHT:
-                            if (direction != 'l') {
+                            if (direction != 'L') {
                                 direction = 'R';
                             }
                             break;
