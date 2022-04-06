@@ -14,6 +14,7 @@ public class GamePanel extends JPanel implements ActionListener{
     private Image space_invaders;
     private Image right;
     private Image left;
+    private Image pong;
 
     int Game = 2;
     Timer timer;
@@ -30,7 +31,7 @@ public class GamePanel extends JPanel implements ActionListener{
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT,new File("src/resources/pixelfont.ttf")));
         }
         catch (IOException | FontFormatException e) {
-
+            System.out.println("Error font");
         }
         setBackground(new Color(28, 30, 38));
         setFocusable(true);
@@ -55,6 +56,8 @@ public class GamePanel extends JPanel implements ActionListener{
         pacman = ddd.getImage();
         ImageIcon edd = new ImageIcon("src/resources/space_invaders.png");
         space_invaders = edd.getImage();
+        ImageIcon fdd = new ImageIcon("src/resources/pong.png");
+        pong = fdd.getImage();
     }
 
     public void draw(Graphics g) {
@@ -83,11 +86,22 @@ public class GamePanel extends JPanel implements ActionListener{
             g.setColor(new Color(28, 30, 38));
             g.fillRect(100,80,282,150);
             g.drawImage(tetris, 155, 99, this);
+            g.drawImage(right, 375, 126, this);
             g.drawImage(left, 40, 126, this);
             g.setColor(new Color(255,0,0));
             g.setFont(pixelfont);
             FontMetrics metrics2 = getFontMetrics(g.getFont());
             g.drawString("Highscore 69",(SCREEN_WIDTH - metrics2.stringWidth("Highscore 69"))/2,250);
+        }
+        else if(Game == 4) {
+            g.setColor(new Color(28, 30, 38));
+            g.fillRect(100,80,282,150);
+            g.drawImage(pong, 124, 73, this);
+            g.drawImage(left, 40, 126, this);
+            g.setColor(new Color(255, 242, 0));
+            g.setFont(pixelfont);
+            FontMetrics metrics2 = getFontMetrics(g.getFont());
+            g.drawString("Highscore 5",(SCREEN_WIDTH - metrics2.stringWidth("Highscore 5"))/2,250);
         }
     }
 
@@ -115,7 +129,7 @@ public class GamePanel extends JPanel implements ActionListener{
                         }
                         break;
                     case KeyEvent.VK_RIGHT:
-                        if (Game != 3) {
+                        if (Game != 4) {
                             Game++;
                             //System.out.println("rechts");
                         }
